@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Export - Operador Logístico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5016;
+            --secondary: #5a8c3a;
+            --accent: #88b04b;
+            --light: #f4f7f2;
+            --dark: #1a1a1a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero-unit {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .hero-unit h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-unit .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .service-card h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary);
+            margin-top: 3rem;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .destination-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--light);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .destination-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .destination-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-unit h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">GRUPO NATURE</a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nature_clean.html">Nature Clean</a></li>
+                <li><a href="nature_academy.html">Nature Academy</a></li>
+                <li><a href="nature_export.html">Nature Export</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-unit">
+        <h1>🌍 NATURE EXPORT</h1>
+        <p class="subtitle">Tu aliado estratégico en exportación agroindustrial</p>
+    </section>
+
+    <section class="content-section">
+        <div class="service-card">
+            <h2>Servicios Integrales de Exportación</h2>
+            
+            <h3>🚢 Operador Logístico Especializado</h3>
+            <p>Facilitamos la gestión integral de tu cadena de exportación, desde el origen hasta el destino final. Coordinamos cada etapa del proceso logístico para garantizar que tus productos lleguen en perfectas condiciones y a tiempo.</p>
+            
+            <p><strong>Nuestros servicios logísticos incluyen:</strong></p>
+            <ul>
+                <li>Coordinación de transporte terrestre (desde campo/planta hasta puerto)</li>
+                <li>Gestión de almacenamiento y cámaras frigoríficas</li>
+                <li>Coordinación de agentes navieros y aerolíneas</li>
+                <li>Consolidación de carga (LCL/FCL)</li>
+                <li>Seguimiento y rastreo en tiempo real</li>
+                <li>Seguro de carga internacional</li>
+                <li>Coordinación de inspecciones previas al embarque</li>
+                <li>Manejo de contenedores refrigerados (reefers)</li>
+            </ul>
+
+            <h3>📋 Trámites ante SENASA</h3>
+            <p>Gestionamos todos los trámites fitosanitarios y sanitarios ante el Servicio Nacional de Sanidad Agraria (SENASA). Nuestro equipo especializado conoce a profundidad los requisitos y procedimientos para agilizar tus exportaciones.</p>
+            
+            <p><strong>Trámites que gestionamos:</strong></p>
+            <ul>
+                <li>Certificados Fitosanitarios de Exportación (CFE)</li>
+                <li>Certificados Zoosanitarios para productos de origen animal</li>
+                <li>Permisos Fitosanitarios de Importación (cuando aplique)</li>
+                <li>Registro de lugares de producción ante SENASA</li>
+                <li>Certificación de plantas de empaque y procesamiento</li>
+                <li>Tratamientos cuarentenarios (fumigación, frío, vapor caliente)</li>
+                <li>Inspecciones fitosanitarias en campo y planta</li>
+                <li>Gestión de hallazgos y no conformidades</li>
+                <li>Actualización de registros y renovaciones</li>
+            </ul>
+
+            <h3>🤝 Acompañamiento en Procesos de Exportación</h3>
+            <p>Te guiamos paso a paso en todo el proceso exportador, desde la planificación inicial hasta la entrega final. Nuestro servicio de consultoría especializada te ayuda a evitar errores costosos y cumplir con todas las regulaciones.</p>
+            
+            <p><strong>Servicios de consultoría:</strong></p>
+            <ul>
+                <li>Análisis de mercados destino y oportunidades comerciales</li>
+                <li>Identificación de requisitos fitosanitarios por país</li>
+                <li>Asesoría en clasificación arancelaria y acuerdos comerciales</li>
+                <li>Diseño de estrategias de entrada a nuevos mercados</li>
+                <li>Documentación comercial y aduanera completa</li>
+                <li>Términos de negociación internacional (INCOTERMS)</li>
+                <li>Requisitos de empaque y etiquetado por destino</li>
+                <li>Normativas de calidad y certificaciones requeridas</li>
+                <li>Resolución de problemas en aduana</li>
+                <li>Capacitación a equipos internos</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>El Proceso de Exportación con Nature Export</h3>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>Consulta Inicial</h4>
+                        <p>Analizamos tu producto y destino objetivo</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>Requisitos</h4>
+                        <p>Identificamos todos los requisitos legales y sanitarios</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>Documentación</h4>
+                        <p>Preparamos y gestionamos toda la documentación</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4>Logística</h4>
+                        <p>Coordinamos transporte y almacenamiento</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h4>Inspecciones</h4>
+                        <p>Facilitamos inspecciones SENASA y otras</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h4>Embarque</h4>
+                        <p>Supervisamos el embarque y seguimiento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Productos Agroindustriales que Exportamos</h2>
+            
+            <h3>🍇 Frutas y Hortalizas Frescas</h3>
+            <p>Expertos en la exportación de productos frescos con altos estándares de calidad:</p>
+            <ul>
+                <li>Uvas de mesa, arándanos, mangos, paltas</li>
+                <li>Espárragos, pimientos, alcachofas</li>
+                <li>Frutas tropicales y exóticas</li>
+                <li>Hortalizas de hoja y raíces</li>
+            </ul>
+
+            <h3>🥫 Productos Procesados y Conservas</h3>
+            <p>Facilitamos la exportación de productos con valor agregado:</p>
+            <ul>
+                <li>Conservas de frutas y vegetales</li>
+                <li>Pulpas y concentrados</li>
+                <li>Productos deshidratados</li>
+                <li>Snacks saludables</li>
+            </ul>
+
+            <h3>🌾 Granos y Cereales</h3>
+            <p>Gestión especializada para productos secos:</p>
+            <ul>
+                <li>Quinua, kiwicha, chía</li>
+                <li>Granos andinos tradicionales</li>
+                <li>Legumbres y menestras</li>
+                <li>Café y cacao en grano</li>
+            </ul>
+
+            <h3>🌿 Productos Orgánicos Certificados</h3>
+            <p>Manejo especializado de productos con certificación orgánica:</p>
+            <ul>
+                <li>Frutas y vegetales orgánicos</li>
+                <li>Superalimentos orgánicos</li>
+                <li>Aceites esenciales y extractos</li>
+                <li>Hierbas medicinales y aromáticas</li>
+            </ul>
+
+            <h3>💪 Superalimentos e Ingredientes Naturales</h3>
+            <p>Posicionamos tus productos premium en mercados internacionales:</p>
+            <ul>
+                <li>Maca, lúcuma, camu camu</li>
+                <li>Sacha inchi, aguaymanto</li>
+                <li>Harinas y polvos funcionales</li>
+                <li>Ingredientes para suplementos</li>
+            </ul>
+        </div>
+
+        <div class="service-card">
+            <h2>Principales Mercados de Destino</h2>
+            <p>Tenemos experiencia exportando a los principales mercados del mundo:</p>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-icon">🇺🇸</div>
+                    <h4>Estados Unidos</h4>
+                    <p>FDA, USDA</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇪🇺</div>
+                    <h4>Unión Europea</h4>
+                    <p>Regulaciones CE</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇨🇳</div>
+                    <h4>China</h4>
+                    <p>AQSIQ, CIQ</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇯🇵</div>
+                    <h4>Japón</h4>
+                    <p>MAFF</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇰🇷</div>
+                    <h4>Corea del Sur</h4>
+                    <p>NPQS</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇨🇦</div>
+                    <h4>Canadá</h4>
+                    <p>CFIA</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇦🇺</div>
+                    <h4>Australia</h4>
+                    <p>DAFF</p>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-icon">🇲🇽</div>
+                    <h4>México</h4>
+                    <p>SENASICA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Ventajas de Trabajar con Nature Export</h2>
+            <ul>
+                <li>✓ Más de 10 años de experiencia en exportación agroindustrial</li>
+                <li>✓ Conocimiento profundo de normativas internacionales por país</li>
+                <li>✓ Red establecida con autoridades sanitarias (SENASA, aduanas)</li>
+                <li>✓ Alianzas estratégicas con navieras y agentes de carga</li>
+                <li>✓ Gestión ágil de trámites y documentación</li>
+                <li>✓ Asesoría personalizada según tu producto y mercado objetivo</li>
+                <li>✓ Seguimiento en tiempo real de tus envíos</li>
+                <li>✓ Resolución eficiente de contingencias</li>
+                <li>✓ Equipo bilingüe para comunicación internacional</li>
+                <li>✓ Tarifas competitivas y transparentes</li>
+                <li>✓ Compromiso con plazos de entrega</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>¿Listo para llevar tus productos al mundo?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Contáctanos y recibe una cotización personalizada para tu proyecto de exportación</p>
+        <a href="index.html#contacto" class="cta-button">Solicitar Cotización</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Grupo Nature - Nature Export. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem;">Ica, Perú</p>
+    </footer>
+</body>
+</html>

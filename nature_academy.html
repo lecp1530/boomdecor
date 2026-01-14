@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Academy - Formación Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5016;
+            --secondary: #5a8c3a;
+            --accent: #88b04b;
+            --light: #f4f7f2;
+            --dark: #1a1a1a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero-unit {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .hero-unit h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-unit .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .service-card h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--secondary);
+            margin-top: 3rem;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .campus-banner {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .campus-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .campus-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .campus-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-unit h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">GRUPO NATURE</a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nature_clean.html">Nature Clean</a></li>
+                <li><a href="nature_academy.html">Nature Academy</a></li>
+                <li><a href="nature_export.html">Nature Export</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-unit">
+        <h1>🎓 NATURE ACADEMY</h1>
+        <p class="subtitle">Formación profesional para la industria alimentaria</p>
+    </section>
+
+    <section class="content-section">
+        <div class="campus-banner">
+            <h2>📚 Campus Virtual Nature Academy</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Accede a más de 50 cursos especializados disponibles 24/7</p>
+            <p>Aprende a tu ritmo con contenido actualizado, certificación profesional y soporte técnico continuo</p>
+            <a href="#" class="campus-button">Acceder al Campus Virtual</a>
+        </div>
+
+        <div class="service-card">
+            <h2>Programas de Capacitación</h2>
+            
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-icon">🎥</div>
+                    <h3>Cursos Online en Vivo</h3>
+                    <p>Sesiones interactivas con expertos de la industria donde podrás aprender y consultar en tiempo real.</p>
+                    <ul>
+                        <li>Clases en vivo por Zoom</li>
+                        <li>Interacción directa con instructores</li>
+                        <li>Casos prácticos reales</li>
+                        <li>Certificación inmediata</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📹</div>
+                    <h3>Cursos Pregrabados</h3>
+                    <p>Biblioteca de cursos disponibles 24/7 para que aprendas a tu propio ritmo desde cualquier lugar.</p>
+                    <ul>
+                        <li>Acceso ilimitado</li>
+                        <li>Material descargable</li>
+                        <li>Evaluaciones automatizadas</li>
+                        <li>Certificado digital</li>
+                    </ul>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🏢</div>
+                    <h3>Capacitaciones In-Company</h3>
+                    <p>Programas diseñados a medida para tu empresa, adaptados a tus procesos y necesidades específicas.</p>
+                    <ul>
+                        <li>Contenido personalizado</li>
+                        <li>En tus instalaciones</li>
+                        <li>Horarios flexibles</li>
+                        <li>Seguimiento post-capacitación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Áreas Temáticas Especializadas</h2>
+            
+            <h3>🔬 Inocuidad Alimentaria</h3>
+            <p>Formación completa en sistemas de gestión de inocuidad alimentaria:</p>
+            <ul>
+                <li>Sistemas HACCP: Fundamentos y aplicación práctica</li>
+                <li>Análisis de Peligros y Puntos Críticos de Control</li>
+                <li>Validación y verificación de planes HACCP</li>
+                <li>Gestión de Alérgenos en la industria alimentaria</li>
+                <li>Cultura de Inocuidad Alimentaria</li>
+                <li>Fraude Alimentario y autenticidad de productos</li>
+            </ul>
+
+            <h3>📜 Certificaciones Internacionales</h3>
+            <p>Prepárate para las principales certificaciones de la industria:</p>
+            <ul>
+                <li>BRCGS Food Safety versión 9</li>
+                <li>FSSC 22000 versión 6.0</li>
+                <li>IFS Food versión 8</li>
+                <li>SQF (Safe Quality Food)</li>
+                <li>Certificación HACCP Internacional</li>
+                <li>ISO 22000:2018 Sistema de Gestión de Inocuidad</li>
+                <li>GlobalG.A.P. para producción primaria</li>
+            </ul>
+
+            <h3>🔍 Auditoría Interna y Externa</h3>
+            <p>Desarrolla habilidades profesionales de auditoría:</p>
+            <ul>
+                <li>Formación de Auditores Internos HACCP</li>
+                <li>Auditoría de Sistemas de Gestión de Inocuidad</li>
+                <li>Técnicas de auditoría y entrevista</li>
+                <li>Elaboración de reportes de auditoría</li>
+                <li>Gestión de No Conformidades y Acciones Correctivas</li>
+                <li>Preparación para auditorías de certificación</li>
+            </ul>
+
+            <h3>🏭 Buenas Prácticas de Manufactura (BPM/GMP)</h3>
+            <p>Fundamentos esenciales para la industria alimentaria:</p>
+            <ul>
+                <li>BPM según Codex Alimentarius y normativa nacional</li>
+                <li>Higiene personal y capacitación de manipuladores</li>
+                <li>Diseño higiénico de instalaciones y equipos</li>
+                <li>Control de plagas en plantas alimentarias</li>
+                <li>Limpieza y desinfección: SSOP</li>
+                <li>Control de proveedores y trazabilidad</li>
+            </ul>
+
+            <h3>📊 Gestión de Calidad e Inocuidad</h3>
+            <p>Herramientas para gestionar sistemas integrados:</p>
+            <ul>
+                <li>Diseño e implementación de Sistemas de Gestión</li>
+                <li>Indicadores y métricas de inocuidad</li>
+                <li>Mejora continua y Lean Manufacturing</li>
+                <li>Gestión documental y registros</li>
+                <li>Herramientas de calidad: 5S, Kaizen, Six Sigma</li>
+                <li>Gestión de crisis y retiro de productos</li>
+            </ul>
+
+            <h3>👥 Liderazgo y Gestión de Equipos</h3>
+            <p>Desarrollo de habilidades directivas:</p>
+            <ul>
+                <li>Liderazgo efectivo en calidad e inocuidad</li>
+                <li>Gestión del cambio organizacional</li>
+                <li>Comunicación efectiva y trabajo en equipo</li>
+                <li>Coaching para equipos de calidad</li>
+                <li>Resolución de conflictos</li>
+            </ul>
+
+            <h3>⚖️ Normativa Sanitaria</h3>
+            <p>Actualización en regulaciones vigentes:</p>
+            <ul>
+                <li>Normativa sanitaria peruana (DIGESA, SANIPES)</li>
+                <li>FDA Food Safety Modernization Act (FSMA)</li>
+                <li>Regulaciones de exportación por país destino</li>
+                <li>Etiquetado nutricional y claims</li>
+                <li>Actualización normativa continua</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Beneficios de Capacitarte con Nature Academy</h3>
+                <ul>
+                    <li>Instructores con más de 15 años de experiencia práctica en la industria</li>
+                    <li>Certificados con respaldo técnico reconocidos por la industria</li>
+                    <li>Contenido actualizado según últimas normativas internacionales</li>
+                    <li>Material descargable: guías, plantillas, procedimientos</li>
+                    <li>Casos prácticos de empresas reales</li>
+                    <li>Soporte técnico post-capacitación</li>
+                    <li>Acceso a comunidad de profesionales</li>
+                    <li>Descuentos corporativos para grupos</li>
+                    <li>Opciones de financiamiento disponibles</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <h2>Modalidades de Aprendizaje</h2>
+            
+            <h3>💻 Campus Virtual 24/7</h3>
+            <p>Plataforma e-learning moderna con cursos pregrabados, evaluaciones interactivas y seguimiento de progreso en tiempo real.</p>
+            
+            <h3>🎯 Sesiones En Vivo</h3>
+            <p>Capacitaciones sincrónicas por videoconferencia con grupos reducidos para garantizar interacción personalizada.</p>
+            
+            <h3>🏢 Formación In-House</h3>
+            <p>Llevamos la capacitación a tu empresa con programas personalizados según tu contexto operativo y necesidades específicas.</p>
+            
+            <h3>🎓 Programas de Certificación</h3>
+            <p>Rutas de aprendizaje completas con evaluaciones rigurosas y certificación profesional al finalizar.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>¿Listo para impulsar tu carrera profesional?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Consulta nuestro catálogo completo de cursos y programas</p>
+        <a href="index.html#contacto" class="cta-button">Solicitar Información</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Grupo Nature - Nature Academy. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem;">Ica, Perú</p>
+    </footer>
+</body>
+</html>
