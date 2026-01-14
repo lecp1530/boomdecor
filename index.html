@@ -115,19 +115,19 @@
         }
 
         .hero-slide:nth-child(1)::after {
-            background: rgba(0, 0, 0, 0.3);
-        }   
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.88) 0%, rgba(79, 157, 105, 0.78) 100%);
+        }
 
         .hero-slide:nth-child(2)::after {
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.85) 0%, rgba(124, 179, 66, 0.75) 100%);
         }
 
         .hero-slide:nth-child(3)::after {
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(79, 157, 105, 0.88) 0%, rgba(124, 179, 66, 0.78) 100%);
         }
 
         .hero-slide:nth-child(4)::after {
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.90) 0%, rgba(255, 167, 38, 0.70) 100%);
         }
 
         .hero-content {
@@ -306,17 +306,18 @@
         }
 
         .mission-vision {
-    padding: 5rem 5%;
-    background: #ffa726;
-}
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
 
-.mv-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
 
         .mv-card {
             background: linear-gradient(135deg, var(--light) 0%, white 100%);
@@ -560,33 +561,165 @@
 
         @media (max-width: 768px) {
             .hero {
-                height: 550px;
+                height: 500px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .hero .description {
                 font-size: 1.1rem;
             }
 
-            .hero-bullets {
+            .hero .description {
                 font-size: 1rem;
             }
 
-            nav ul {
+            .hero-bullets {
+                font-size: 0.95rem;
+                text-align: center;
+            }
+
+            .hero-bullets li {
+                padding-left: 1.5rem;
+            }
+
+            .carousel-indicators {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+
+            .indicator.active {
+                width: 30px;
+            }
+
+            nav {
+                padding: 1rem 3%;
+            }
+
+            nav .container {
+                flex-direction: column;
                 gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .units,
+            .values,
+            .blog,
+            .contact {
+                padding: 3rem 5%;
+            }
+
+            .mission-vision {
+                padding: 3rem 5%;
+            }
+
+            .units h2,
+            .values h2,
+            .blog h2,
+            .contact h2 {
+                font-size: 2.2rem;
             }
 
             .units-grid,
             .values-grid,
             .blog-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .unit-card,
+            .value-card,
+            .blog-card {
+                padding: 2rem;
+            }
+
+            .unit-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2.3rem;
+            }
+
+            .mv-card {
+                padding: 2rem;
+            }
+
+            .mv-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .social-links {
+                gap: 1.5rem;
+            }
+
+            .social-links a {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .hero .description {
+                font-size: 0.95rem;
+            }
+
+            .hero-bullets li {
+                font-size: 0.9rem;
+            }
+
+            nav ul {
+                font-size: 0.85rem;
+                gap: 0.8rem;
+            }
+
+            .units h2,
+            .values h2,
+            .blog h2,
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+
+            .unit-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 1rem 2rem;
             }
         }
     </style>
@@ -610,8 +743,8 @@
             <!-- Para agregar tu imagen de viñedos, cambia el style por: style="background-image: url('vinedos.jpg')" -->
             <div class="hero-slide active" style="background-image: url('vinedos.jpg')"></div>
             <div class="hero-slide" style="background-image: url('plagas.jpg')"></div>
-            <div class="hero-slide" style="background-image: url('alimento.jpg')"></div>
             <div class="hero-slide" style="background-image: url('exportacion.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('alimento.jpg')"></div>
         </div>
 
         <div class="hero-content" id="heroContent"></div>
