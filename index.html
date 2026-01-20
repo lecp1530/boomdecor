@@ -892,7 +892,7 @@
             font-size: 0.85rem;
         }
 
-        /* ========== RESPONSIVE ========== */
+        /* ========== RESPONSIVE - MEJORADOS ========== */
         @media (max-width: 1024px) {
             .hero-units {
                 grid-template-columns: 1fr;
@@ -918,17 +918,27 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .history-text {
+                padding: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
             .header-wrapper {
                 flex-direction: column;
                 gap: 1rem;
+                padding: 0.8rem 4%;
             }
 
             .top-bar-right {
                 flex-direction: column;
                 gap: 1rem;
+                width: 100%;
             }
 
             .top-bar-contact {
@@ -940,6 +950,12 @@
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 0.3rem;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.9rem;
             }
 
             .hero-logo-circle {
@@ -960,24 +976,62 @@
             }
 
             .hero-units {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    position: relative;
-    z-index: 3;
-    padding: 0 5%;
-    margin-bottom: 1rem;
-    margin-top: 28vh; /* Aumentado de 18vh a 28vh para bajar casi al borde */
-    max-width: 1400px;
-    width: 100%;
-}
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 5%;
+                margin-bottom: 1rem;
+                margin-top: 28vh;
+                max-width: 1400px;
+                width: 100%;
+            }
+
+            .section {
+                padding: 3rem 5%;
+            }
 
             .section-header h2 {
                 font-size: 2rem;
             }
 
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .history-text {
+                padding: 1.5rem;
+            }
+
+            .history-text p {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+
+            .history-highlight {
+                padding: 1.5rem;
+            }
+
+            .history-highlight p {
+                font-size: 1.05rem;
+            }
+
+            .about-card {
+                padding: 2rem;
+            }
+
+            .about-card h3 {
+                font-size: 1.6rem;
+            }
+
             .stat-number {
                 font-size: 2.5rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
             }
 
             .form-row {
@@ -995,6 +1049,15 @@
         }
 
         @media (max-width: 480px) {
+            .header-wrapper {
+                padding: 0.6rem 3%;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.85rem;
+            }
+
             .hero-logo-circle {
                 width: 70px;
                 height: 70px;
@@ -1006,6 +1069,10 @@
 
             .hero-content h2 {
                 font-size: 1.3rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 0.9rem;
             }
 
             .unit-image-container {
@@ -1021,6 +1088,46 @@
                 font-size: 0.9rem;
             }
 
+            .section {
+                padding: 2.5rem 4%;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-header p {
+                font-size: 0.9rem;
+            }
+
+            .history-text {
+                padding: 1.2rem;
+            }
+
+            .history-text p {
+                font-size: 0.9rem;
+            }
+
+            .history-highlight {
+                padding: 1.2rem;
+            }
+
+            .history-highlight p {
+                font-size: 1rem;
+            }
+
+            .about-card {
+                padding: 1.5rem;
+            }
+
+            .about-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .about-card p {
+                font-size: 0.95rem;
+            }
+
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
@@ -1028,6 +1135,31 @@
 
             .stat-number {
                 font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .value-card {
+                padding: 1.5rem;
+            }
+
+            .value-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .contact-form h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 1.3rem;
             }
         }
     </style>
