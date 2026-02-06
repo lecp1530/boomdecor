@@ -36,34 +36,33 @@
 
         /* ========== HEADER (MENU SUPERIOR) ========== */
         .header-wrapper {
-    background: var(--white);
-    padding: 0.5rem 5%; /* Reducido de 0.8rem a 0.5rem (~5px menos) */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+            background: var(--white);
+            padding: 0.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-        /* Logo semicírculo: solo la mitad superior visible, pegado al borde inferior del header */
         .hero-logo-circle {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(50%);
-    width: 80px;
-    height: 80px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: none; /* Quitar la sombra que causa el color plomo */
-    z-index: 1001;
-    overflow: hidden;
-    clip-path: inset(0 0 50% 0);
-}
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: none;
+            z-index: 1001;
+            overflow: hidden;
+            clip-path: inset(0 0 50% 0);
+        }
 
         .hero-logo-circle img {
             width: 70%;
@@ -97,7 +96,6 @@
             color: var(--primary);
         }
 
-        /* Dropdown */
         .nav-dropdown {
             position: relative;
         }
@@ -196,14 +194,13 @@
             position: relative;
         }
 
-        /* Sección verde con título - height reducido 40% */
         .hero-header {
-    background: var(--primary);
-    padding: 0.15rem 2rem 0.45rem; /* Reducido ~5px del padding original */
-    position: relative;
-    text-align: center;
-    z-index: 1;
-}
+            background: var(--primary);
+            padding: 0.15rem 2rem 0.45rem;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
 
         .hero-logo-text {
             margin-top: 0;
@@ -218,24 +215,22 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        /* Sección con imagen de fondo - altura fija */
         .hero-content-section {
-    background-image: url('chatgptfinal.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 2.5rem 2rem;
-    padding-bottom: 2rem;
-    min-height: calc(60vh - 60px); /* Reducido 10px más (era 50px, ahora 60px) */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 2.5rem;
-    overflow: visible;
-}
+            background-image: url('chatgptfinal.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 2.5rem 2rem;
+            padding-bottom: 2rem;
+            min-height: calc(60vh - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 2.5rem;
+            overflow: visible;
+        }
 
-        /* Overlay sutil solo para mejorar legibilidad del texto */
         .hero-content-section::before {
             content: '';
             position: absolute;
@@ -247,7 +242,6 @@
             pointer-events: none;
         }
 
-        /* Hero Content */
         .hero-content {
             text-align: center;
             color: var(--white);
@@ -281,7 +275,6 @@
             background: rgba(135, 206, 235, 0.25);
         }
 
-        /* Unit Cards - bajados más para ver más imagen */
         .hero-units {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -290,7 +283,7 @@
             z-index: 3;
             padding: 0 5%;
             margin-bottom: 1.5rem;
-            margin-top: 18vh; /* Aumentado para bajar más los bloques */
+            margin-top: 18vh;
             max-width: 1400px;
             width: 100%;
         }
@@ -312,7 +305,6 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.25);
         }
 
-        /* Contenedor de imagen - 100% del espacio */
         .unit-image-container {
             width: 100%;
             height: 120px;
@@ -323,34 +315,33 @@
         }
 
         .hero-unit-card img {
-    width: 90%; /* Cambiado de 90% a 100% */
-    height: 90%; /* Cambiado de 90% a 100% */
-    object-fit: contain;
-    margin: auto;
-}
-        /* Contenido del card */
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            margin: auto;
+        }
+
         .unit-content {
-    padding: 0.1rem 0.5rem; /* Reducido de 0.25rem a 0.1rem (~5px menos) */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
+            padding: 0.1rem 0.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .hero-unit-card h3 {
-        font-size: 1.05rem;
-        color: var(--gray);
-        font-weight: 400;
-        margin-bottom: 0.2rem; /* Reducido de 0.4rem a 0.2rem */
-        flex-grow: 1;
-    }
+        .hero-unit-card h3 {
+            font-size: 1.05rem;
+            color: var(--gray);
+            font-weight: 400;
+            margin-bottom: 0.2rem;
+            flex-grow: 1;
+        }
 
-        /* Footer con color de fondo según el servicio */
         .unit-footer {
-    padding: 0.84rem; /* Reducido de 1.2rem a 0.84rem (30% menos) */
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
+            padding: 0.84rem;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
 
         .hero-unit-card:nth-child(1) .unit-footer {
             background: var(--primary);
@@ -365,16 +356,16 @@
         }
 
         .hero-unit-card .unit-btn {
-    display: inline-block;
-    padding: 0.49rem 1.8rem; /* Reducido de 0.7rem a 0.49rem (30% menos en vertical) */
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    background: var(--white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+            display: inline-block;
+            padding: 0.49rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
         .hero-unit-card:nth-child(1) .unit-btn {
             color: var(--primary);
@@ -393,26 +384,25 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
-        /* Hero Bottom - dentro del banner */
         .hero-bottom {
-    text-align: center;
-    padding: 0.3rem 2rem 0.5rem; /* Reducido aún más el padding */
-    position: relative;
-    z-index: 2;
-}
+            text-align: center;
+            padding: 0.3rem 2rem 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
 
-.hero-bottom h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    background: rgba(135, 206, 235, 0.45); /* Celeste suave con 25% de opacidad */
-    padding: 0.2rem 0.2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(3px); /* Efecto de difuminado suave */
-}
+        .hero-bottom h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: rgba(135, 206, 235, 0.45);
+            padding: 0.2rem 0.2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
+        }
 
         .hero-bottom-btns {
             display: flex;
@@ -422,48 +412,55 @@
         }
 
         .btn {
-    padding: 0.48rem 1.8rem; /* Reducido de 0.8rem a 0.48rem (40% menos en vertical) */
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-}
+            padding: 0.48rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
 
         .btn-outline-white {
-            background: transparent;
-            border: 2px solid var(--white);
+            background: #2e8b57;
+            border: 2px solid #2e8b57;
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.4);
         }
 
         .btn-outline-white:hover {
-            background: var(--white);
-            color: var(--primary);
+            background: #25724a;
+            border-color: #25724a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 139, 87, 0.5);
         }
 
         .btn-primary {
-            background: var(--white);
-            border: 2px solid var(--white);
-            color: var(--primary);
+            background: #2196F3;
+            border: 2px solid #2196F3;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--white);
+            background: #1976D2;
+            border-color: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.5);
         }
 
         /* ========== SECTIONS ========== */
         .section {
-            padding: 4rem 5%;
+            padding: 5rem 5%;
+            margin-bottom: 3rem;
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 4rem;
         }
 
         .section-header h2 {
@@ -483,6 +480,7 @@
             background: var(--white);
             position: relative;
             overflow: hidden;
+            padding-bottom: 6rem;
         }
 
         .history-section::before {
@@ -509,6 +507,125 @@
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             border-left: 4px solid var(--primary);
+        }
+
+        .history-summary {
+            border-left: none;
+        }
+
+        .history-timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 70px;
+            top: 30px;
+            bottom: -30px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-year {
+            min-width: 60px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: right;
+            padding-top: 0.3rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--light);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .history-cta {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .btn-read-more {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 107, 61, 0.3);
+        }
+
+        .btn-read-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 107, 61, 0.4);
+        }
+
+        .history-full {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .history-text p {
@@ -547,20 +664,39 @@
 
         /* ========== ABOUT / MISSION VISION ========== */
         .about-section {
-            background: var(--light);
+            background: linear-gradient(135deg, #e8f5e9 0%, #e1f5fe 100%);
+            position: relative;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(26, 107, 61, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(42, 173, 227, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .about-card {
             background: var(--white);
-            padding: 3rem;
+            padding: 3.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-left: 5px solid var(--primary);
@@ -583,95 +719,104 @@
             font-size: 1.05rem;
         }
 
-        /* ========== STATS ========== */
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            padding: 4rem 5%;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-item {
-            text-align: center;
-            color: var(--white);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
         /* ========== VALUES ========== */
         .values-section {
             background: var(--white);
+            padding-top: 6rem;
+            padding-bottom: 6rem;
         }
 
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .value-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
-            transition: all 0.3s ease;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
         }
 
         .value-card:hover {
-            background: var(--light);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--primary);
         }
 
-        .value-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 50%;
+        /* CORREGIDO: CSS sin duplicados y padding en 0 */
+        .value-image {
+            width: 100%;
+            height: 280px;
+            background: #f8f9fa;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1rem;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
         }
 
-        .value-card h4 {
-            font-size: 1.2rem;
+        .value-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .value-image .temp-icon {
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        .value-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .value-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             color: var(--primary-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
-        .value-card p {
+        .value-content p {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .value-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
         }
 
         /* ========== CONTACT ========== */
         .contact-section {
             background: var(--light);
+            padding-top: 6rem;
+            padding-bottom: 6rem;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
+            gap: 4rem;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -679,14 +824,14 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .contact-card {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.2rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
             background: var(--white);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -726,16 +871,17 @@
             color: var(--primary);
         }
 
+        /* CORREGIDO: Fondo del formulario más claro con degradado */
         .contact-form {
-            background: var(--primary-dark);
-            padding: 2.5rem;
+            background: linear-gradient(135deg, #1a6b3d 0%, #2e8b57 100%);
+            padding: 3rem;
             border-radius: 20px;
         }
 
         .contact-form h3 {
             color: var(--white);
             font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-row {
@@ -892,7 +1038,7 @@
             font-size: 0.85rem;
         }
 
-        /* ========== RESPONSIVE - MEJORADOS ========== */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
             .hero-units {
                 grid-template-columns: 1fr;
@@ -905,10 +1051,6 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
 
             .contact-grid {
@@ -986,7 +1128,23 @@
             }
 
             .section {
-                padding: 3rem 5%;
+                padding: 4rem 5%;
+                margin-bottom: 2rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .history-section {
+                padding-bottom: 5rem;
+            }
+
+            .about-section,
+            .values-section,
+            .contact-section {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
             }
 
             .section-header h2 {
@@ -995,6 +1153,31 @@
 
             .section-header p {
                 font-size: 1rem;
+            }
+
+            .timeline-item {
+                gap: 1rem;
+            }
+
+            .timeline-year {
+                min-width: 50px;
+                font-size: 1.1rem;
+            }
+
+            .timeline-item::before {
+                left: 55px;
+            }
+
+            .timeline-content {
+                padding: 1.2rem;
+            }
+
+            .timeline-content h4 {
+                font-size: 1rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.9rem;
             }
 
             .history-text {
@@ -1014,20 +1197,45 @@
                 font-size: 1.05rem;
             }
 
+            .btn-read-more {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
             .about-card {
-                padding: 2rem;
+                padding: 2.5rem;
+            }
+
+            .about-grid {
+                gap: 3rem;
             }
 
             .about-card h3 {
                 font-size: 1.6rem;
             }
 
-            .stat-number {
-                font-size: 2.5rem;
+            .values-grid {
+                gap: 2.5rem;
+            }
+
+            .contact-grid {
+                gap: 3rem;
             }
 
             .values-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .value-image {
+                height: 220px;
+            }
+
+            .value-content {
+                padding: 1.5rem;
+            }
+
+            .value-content h4 {
+                font-size: 1.2rem;
             }
 
             .contact-form {
@@ -1089,15 +1297,64 @@
             }
 
             .section {
-                padding: 2.5rem 4%;
+                padding: 3.5rem 5%;
+                margin-bottom: 1.5rem;
             }
 
             .section-header h2 {
                 font-size: 1.6rem;
+                margin-bottom: 0.8rem;
             }
 
             .section-header p {
                 font-size: 0.9rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .history-section {
+                padding-bottom: 4.5rem;
+            }
+
+            .about-section,
+            .values-section,
+            .contact-section {
+                padding-top: 4.5rem;
+                padding-bottom: 4.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .timeline-year {
+                min-width: auto;
+                text-align: left;
+                font-size: 1rem;
+            }
+
+            .timeline-content {
+                padding: 1rem;
+            }
+
+            .timeline-content::before {
+                top: 10px;
+            }
+
+            .timeline-content h4 {
+                font-size: 0.95rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.85rem;
             }
 
             .history-text {
@@ -1116,8 +1373,14 @@
                 font-size: 1rem;
             }
 
+            .btn-read-more {
+                padding: 0.6rem 1.3rem;
+                font-size: 0.9rem;
+            }
+
             .about-card {
-                padding: 1.5rem;
+                padding: 2rem;
+                margin-bottom: 2rem;
             }
 
             .about-card h3 {
@@ -1128,34 +1391,38 @@
                 font-size: 0.95rem;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
+            .about-grid {
+                gap: 2rem;
             }
 
-            .stat-number {
-                font-size: 2rem;
+            .values-grid {
+                gap: 2rem;
             }
 
-            .stat-label {
-                font-size: 0.9rem;
+            .contact-grid {
+                gap: 2.5rem;
             }
 
             .value-card {
                 padding: 1.5rem;
             }
 
-            .value-icon {
-                width: 60px;
-                height: 60px;
+            .value-image {
+                height: 200px;
             }
 
             .contact-form {
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             .contact-form h3 {
                 font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+                gap: 1rem;
             }
 
             .footer-brand h3 {
@@ -1193,7 +1460,6 @@
             </div>
         </div>
 
-        <!-- Logo semicírculo: solo mitad superior visible, pegado al borde inferior -->
         <div class="hero-logo-circle">
             <img src="hojas.png" alt="Logo Grupo Nature">
         </div>
@@ -1201,22 +1467,18 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-        <!-- Sección verde con título (donde estaría la mitad inferior del círculo) -->
         <div class="hero-header">
             <div class="hero-logo-text">
                 <h1>GRUPO NATURE</h1>
             </div>
         </div>
 
-        <!-- Sección con imagen de fondo -->
         <div class="hero-content-section">
-            <!-- Content -->
             <div class="hero-content">
                 <h2><strong>Soluciones Integrales</strong> para la Industria Alimentaria y Logística</h2>
                 <p class="tagline">Confianza que transforma. Cumplimiento que respalda. Soluciones que cuidan.</p>
             </div>
 
-            <!-- Unit Cards con imágenes 100%, footer de color y borde ovalado -->
             <div class="hero-units">
                 <a href="nature_clean.html" class="hero-unit-card">
                     <div class="unit-image-container">
@@ -1270,7 +1532,46 @@
             <p>De una necesidad técnica, a una visión integral</p>
         </div>
         <div class="history-content">
-            <div class="history-text">
+            <div class="history-text history-summary">
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-content">
+                            <h4>🌱 Nace Nature Clean</h4>
+                            <p>Iniciamos como una empresa de saneamiento ambiental enfocada en la industria alimentaria.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h4>📚 Creamos Nature Academy</h4>
+                            <p>Expandimos hacia la formación profesional en inocuidad y certificaciones.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h4>🚢 Lanzamos Nature Export</h4>
+                            <p>Agregamos servicios de operador logístico especializado en exportación.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Hoy</div>
+                        <div class="timeline-content">
+                            <h4>🌿 Grupo Nature</h4>
+                            <p>Tres unidades especializadas trabajando bajo un mismo propósito: soluciones confiables para una industria más segura.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history-cta">
+                    <button onclick="toggleHistoryFull()" class="btn-read-more">
+                        Leer Historia Completa →
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-text history-full" id="historyFull" style="display: none;">
                 <p>Todo comenzó con una convicción clara: <strong>la salud ambiental es la base para la inocuidad y el desarrollo sostenible</strong>. Con esa idea en mente, nació en el 2018 <strong>NATURE CLEAN EIRL</strong>, una empresa peruana enfocada inicialmente en ofrecer servicios de saneamiento ambiental: desinfección, control de plagas, limpieza de reservorios y estudios técnicos especializados.</p>
 
                 <p>No tardamos en notar algo fundamental: las empresas, sobre todo del sector alimentario, no solo requerían servicios técnicos… <strong>necesitaban aliados confiables</strong> que comprendieran el valor del cumplimiento normativo, de la prevención y de la mejora continua.</p>
@@ -1292,6 +1593,12 @@
                 <p>Nuestro camino no ha sido improvisado. Ha sido el resultado de <strong>escuchar, adaptarnos, aprender y crecer</strong> junto a nuestros clientes.</p>
 
                 <p><strong>Y esta historia recién empieza.</strong></p>
+
+                <div class="history-cta">
+                    <button onclick="toggleHistoryFull()" class="btn-read-more">
+                        ← Mostrar Resumen
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -1314,28 +1621,6 @@
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">+500</div>
-                <div class="stat-label">Clientes Satisfechos</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">+1000</div>
-                <div class="stat-label">Servicios Realizados</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">+50</div>
-                <div class="stat-label">Cursos Impartidos</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Tasa de Satisfacción</div>
-            </div>
-        </div>
-    </section>
-
     <!-- VALUES -->
     <section class="section values-section">
         <div class="section-header">
@@ -1344,24 +1629,44 @@
         </div>
         <div class="values-grid">
             <div class="value-card">
-                <div class="value-icon">⚙️</div>
-                <h4>Integridad Técnica</h4>
-                <p>Servicios con rigurosidad y ética profesional</p>
+                <div class="value-image">
+                     <img src="imagen-integridad.jpg" alt="Integridad Técnica">
+                </div>
+                <div class="value-content">
+                    <h4>Integridad Técnica</h4>
+                    <p>Servicios con rigurosidad y ética profesional en cada proyecto que desarrollamos</p>
+                    <span class="value-badge">Excelencia</span>
+                </div>
             </div>
             <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h4>Confianza</h4>
-                <p>Cumplimos lo que prometemos</p>
+                <div class="value-image">
+                    <img src="confianza.jpg" alt="Confianza">
+                </div>
+                <div class="value-content">
+                    <h4>Confianza</h4>
+                    <p>Cumplimos lo que prometemos, construyendo relaciones sólidas y duraderas</p>
+                    <span class="value-badge">Compromiso</span>
+                </div>
             </div>
             <div class="value-card">
-                <div class="value-icon">📋</div>
-                <h4>Cumplimiento</h4>
-                <p>Estándares internacionales de calidad</p>
+                <div class="value-image">
+                    <img src="imagen-cumplimiento.jpg" alt="Cumplimiento"> 
+                </div>
+                <div class="value-content">
+                    <h4>Cumplimiento</h4>
+                    <p>Adherencia a estándares internacionales de calidad en todos nuestros servicios</p>
+                    <span class="value-badge">Calidad</span>
+                </div>
             </div>
             <div class="value-card">
-                <div class="value-icon">🌿</div>
-                <h4>Responsabilidad</h4>
-                <p>Compromiso con el medio ambiente</p>
+                <div class="value-image">
+                    <img src="imagen-responsabilidad.jpg" alt="Responsabilidad">
+                </div>
+                <div class="value-content">
+                    <h4>Responsabilidad</h4>
+                    <p>Compromiso constante con el medio ambiente y la sostenibilidad del planeta</p>
+                    <span class="value-badge">Sostenibilidad</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1492,7 +1797,6 @@
             e.target.reset();
         }
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1502,6 +1806,21 @@
                 }
             });
         });
+
+        function toggleHistoryFull() {
+            const summary = document.querySelector('.history-summary');
+            const full = document.getElementById('historyFull');
+            
+            if (full.style.display === 'none') {
+                summary.style.display = 'none';
+                full.style.display = 'block';
+                full.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                full.style.display = 'none';
+                summary.style.display = 'block';
+                summary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
     </script>
 </body>
 </html>
