@@ -65,6 +65,21 @@
             color: var(--secondary);
         }
 
+        .nav-portal-btn {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s !important;
+        }
+        .nav-portal-btn:hover {
+            background: var(--secondary) !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
         .hero-unit {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -297,6 +312,7 @@
                 <li><a href="nature_academy.html">Nature Academy</a></li>
                 <li><a href="nature_export.html">Nature Export</a></li>
                 <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="portal_clean.html" class="nav-portal-btn">🔒 Portal Clientes</a></li>
             </ul>
         </div>
     </nav>
@@ -384,6 +400,31 @@
                 <li><strong>Industria Farmacéutica:</strong> Laboratorios, plantas de producción</li>
                 <li><strong>Retail y Supermercados:</strong> Áreas de almacenamiento y ventas</li>
             </ul>
+        </div>
+    </section>
+
+    <!-- PORTAL CLIENTES BANNER -->
+    <section style="background: #f4f7f2; padding: 3rem 5%; text-align: center; border-top: 3px solid #5a8c3a;">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🔒</div>
+            <h2 style="color: #2d5016; font-size: 1.8rem; margin-bottom: 0.8rem;">Portal de Documentos</h2>
+            <p style="color: #555; font-size: 1.05rem; margin-bottom: 1.8rem; line-height: 1.7;">
+                ¿Eres cliente de Nature Clean? Accede a tus informes, certificados y documentos técnicos desde tu portal privado.
+            </p>
+            <a href="portal_clean.html" style="
+                display: inline-block;
+                background: linear-gradient(135deg, #2d5016, #5a8c3a);
+                color: white;
+                text-decoration: none;
+                padding: 1rem 2.5rem;
+                border-radius: 10px;
+                font-size: 1.05rem;
+                font-weight: 700;
+                transition: all 0.3s;
+                box-shadow: 0 4px 15px rgba(45,80,22,0.3);
+            ">
+                Acceder al Portal →
+            </a>
         </div>
     </section>
 
